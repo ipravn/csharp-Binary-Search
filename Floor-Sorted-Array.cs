@@ -32,6 +32,15 @@ class Solution
     {
         int start = 0;
         int end = arr.Length - 1;
+        
+        if (arr[end] < target) // if the data is out of the given array elemnts
+        {
+            return -100; // Number -100 is just for understanding 
+        }
+        else if (arr[start] > target)
+        {
+            return -200; // Number -200 is just for understanding 
+        }
 
         while (start <= end)
         {
