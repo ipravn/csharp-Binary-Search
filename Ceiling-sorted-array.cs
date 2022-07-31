@@ -21,8 +21,8 @@ class Solution
 {
     public static void Main(string[] args)
     {
-        int[] arr = { 11,18,19,89,99};
-        int target = 94;
+        int[] arr = { 1, 2, 8, 10, 10, 12, 19 };
+        int target = 5;
         int result = BinarySearch(arr, target);
         Console.WriteLine(result);
         Console.ReadKey();
@@ -33,8 +33,19 @@ class Solution
         int start = 0;
         int end = arr.Length - 1;
 
+        if (arr[end] < target) // if the target is bigger than the given elements.
+        {
+            return -100; // Number -100 is just for understanding 
+        }
+        else if (arr[start] > target) // if the target is less than the given elements.
+        {
+            return -200; // Number -200 is just for understanding 
+        }
+
         while (start <= end)
         {
+            
+
             int mid = start + (end - start) / 2;
 
             if (arr[mid] > target)
@@ -49,7 +60,11 @@ class Solution
             {
                 return start;
             }
+            
+
         }
+        
+
         return arr[start] ;
     }
 
